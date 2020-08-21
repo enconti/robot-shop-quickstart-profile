@@ -11,7 +11,6 @@ configured by [eksctl](https://eksctl.io) through GitOps.
 - [Grafana](https://grafana.com) -- for a rich way to visualize metrics via dashboards you can create, explore, and share.
 - [Kubernetes dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) -- Kubernetes' standard dashboard.
 - [Fluentd](https://www.fluentd.org/) & Amazon's [CloudWatch agent](https://aws.amazon.com/cloudwatch/) -- for cluster & containers' [log collection, aggregation & analytics in CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-setup-logs.html).
-- [podinfo](https://github.com/stefanprodan/podinfo) --  a toy demo application.
 
 ## Pre-requisites
 
@@ -37,13 +36,13 @@ For security reasons, this quickstart profile does not expose any workload publi
 
 You could port-forward into a pod, so that you (and _only_ you) could access it locally.
 
-For example, for `demo/podinfo`:
+For example, for `demo/prometheus`:
 
 - run:
     ```console
-    kubectl --namespace demo port-forward service/podinfo 9898:9898
+    kubectl --namespace monitoring port-forward service/prometheus 9090:9090
     ```
-- go to http://localhost:9898
+- go to http://localhost:9090
 
 ### Ingress
 
